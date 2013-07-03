@@ -10,7 +10,7 @@
 /* Sticky footer styles
 -------------------------------------------------- */
 body {   
-    background: /* url('../img/background.jpg')*/ no-repeat top center fixed #f8f8f8; 
+    background:  url('../img/background.jpg') no-repeat top center fixed #f8f8f8; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -103,7 +103,7 @@ h1{
 /* Set the fixed height of the footer here */
 #push,
 #footer {
-    height: 60px;
+    height: 80px;
 }
 #footer {
     background-color: #dbdbdb;
@@ -132,7 +132,6 @@ h1{
     margin-left: 11%;
 }
 .container .credit {
-    margin: 20px 0;
 }
 
 #homeBoxs{
