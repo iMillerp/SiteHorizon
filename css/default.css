@@ -10,7 +10,7 @@
 /* Sticky footer styles
 -------------------------------------------------- */
 body {   
-    background: url('../img/background.jpg') no-repeat top center fixed #f8f8f8; 
+    background: /* url('../img/background.jpg')*/ no-repeat top center fixed #f8f8f8; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

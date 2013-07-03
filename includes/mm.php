@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Musica Atual</title>
-        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="../css/bootstrap.css" rel="stylesheet">
         <meta http-equiv="refresh" content="10" > 
         <style>
             *{

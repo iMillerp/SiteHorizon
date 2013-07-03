@@ -1,8 +1,7 @@
-<?
+<?php
 include('includes/mobile_device_detect.php');
 mobile_device_detect(true, true, true, true, true, true, 'http://radiohorizon.com.br/mobile/', false);
-?>
-<?php
+
 //error_reporting(0);
 
 session_start();
@@ -184,8 +183,6 @@ if ($_GET['play'] == '1') {
                                         fjs.parentNode.insertBefore(js, fjs);
                                     }
                                 }(document, "script", "twitter-wjs");</script>
-
-
                         </div>
                     </div>
                 </div>
