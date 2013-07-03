@@ -103,9 +103,11 @@ h1{
 /* Set the fixed height of the footer here */
 #push,
 #footer {
-    height: 60px;
+    height: 80px;
 }
 #footer {
+    box-shadow: -3px 0 3px #000;
+    background: url(../img/footer_bg.jpg) repeat;
     background-color: #dbdbdb;
 }
 
