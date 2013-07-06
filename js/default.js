@@ -9,15 +9,11 @@
 }(document, 'script', 'facebook-jssdk'));
 
 function abrir(URL, W, H) {
-
     var width = W;
     var height = H;
-
     var left = 99;
     var top = 99;
-
     window.open(URL, 'janela', 'width=' + width + ', height=' + height + ', top=' + top + ', left=' + left + ', scrollbars=yes, status=no, toolbar=no, location=no, directories=no, menubar=no, resizable=no, fullscreen=no');
-
 }
 
 (function(i, s, o, g, r, a, m) {

@@ -11,19 +11,19 @@
 /**
  * Inicialização - "Conexão com MySQL"
  */
-$db = new MySQL();
-if (!$db->Open(radio_db, radio_host, radio_user, radio_pass)) {
-    $db->Kill();
+$site = new MySQL();
+if (!$site->Open(radio_db, radio_host, radio_user, radio_pass)) {
+    $site->Kill();
 }
 /**
  * Estatisticas - Conta usuarios Clube
  */
 if (isset($_GET['pageid'])) {
-    if ($db->Query("SELECT * FROM `pages` WHERE id =" . $_GET['pageid'])) {
-        if ($db->RowCount() < 1) {
+    if ($site->Query("SELECT * FROM `pages` WHERE id =" . $_GET['pageid'])) {
+        if ($site->RowCount() < 1) {
             $pagina_info = false;
         } else {
-            $pagina_info = $db->RecordsArray();
+            $pagina_info = $site->RecordsArray();
         }
     } else {
         echo "<p>Query Failed</p>";

@@ -35,10 +35,10 @@ mobile_device_detect(true, true, true, true, true, true, 'http://radiohorizon.co
                 <div class="">
                     <div class="" style="margin-left: 30px;">
                         <div class="pull-right" id="pub1">
-                            <img class="img-polaroid" src="http://placehold.it/300x80&text=Publicidade+300x100">
+                            <a href="#"><img class="img-polaroid" src="http://placehold.it/300x80&text=Publicidade+300x100"></a>
                         </div>
                         <div class="pull-right" style="margin-right: 5px;" id="pub2">
-                            <img class="img-polaroid" src="http://placehold.it/300x80&text=Publicidade+300x100">
+                            <a href="#"><img class="img-polaroid" src="http://placehold.it/300x80&text=Publicidade+300x100"></a>
                         </div>
                         <img src="img/logo.png" />
                     </div>
@@ -61,14 +61,7 @@ mobile_device_detect(true, true, true, true, true, true, 'http://radiohorizon.co
                 </div>
             </div>
             <div class="span11">
-                <div id="slides">
-                    <div class="box_skitter box_skitter_large">
-                        <ul>
-                            <li><a href="#"><img src="img/1.jpg" class="random" style="width: 1070px;" /></a><div class="label_text"><p>Rádio Horizon</p></div></li>
-                            <li><a href="#"><img src="img/2.jpg" class="random" style="width: 1070px;" /></a><div class="label_text"><p>Rádio Horizon</p></div></li>
-                        </ul>
-                    </div>
-                </div>
+                <?php #require_once 'includes/pages/slides.php'; ?>
             </div>
             <div class="span11">
                 <div class="row">
@@ -78,7 +71,6 @@ mobile_device_detect(true, true, true, true, true, true, 'http://radiohorizon.co
                             require_once "includes/pages/home.php";
                         } else {
                             if ($pagina_info) {
-                                //print_r($pagina_info);
                                 require_once "includes/pages/" .$pagina_info[0]['arquive'];
                             } else {
                                 require_once 'includes/pages/home.php';
@@ -113,9 +105,7 @@ mobile_device_detect(true, true, true, true, true, true, 'http://radiohorizon.co
                                 Tocando Agora:
                                 <iframe style="margin-bottom: -5px;" name="playerMusicaAtual" src="includes/mm.php" width="150" height="20" frameborder="0" scrolling="no"></iframe>
                                 <br>
-                                <center>
-                                    <embed height="17" width="260" flashvars="file=http://74.222.1.212:8780/;type=mp3&amp;volume=100&amp;bufferlength=10&amp;autostart=true" allowscriptaccess="always" quality="high" src="http://stream.maisouvida.com/player.swf" type="application/x-shockwave-flash">
-                                </center>
+                                <center style="padding-bottom: 5px;"> <button class="btn btn-danger" onclick="abrir('http://radiohorizon.com.br/site/ouvir.php',300,30);"><i class="icon-play icon-white"></i>Clique aqui para ouvir!<i class="icon-headphones icon-white"></i></button></center>
                             </div>
                         </div>
                         <div id="boxsLateral">
@@ -162,7 +152,7 @@ mobile_device_detect(true, true, true, true, true, true, 'http://radiohorizon.co
                         <a hrf="#" class="social44 vimeo medialinks">&nbsp;</a>
                     </div>
                 </center>
-            </div>
+            </div><embed height="1" width="1" flashvars="file=http://74.222.1.212:8780/;type=mp3&amp;volume=0&amp;bufferlength=10&amp;autostart=true" allowscriptaccess="always" quality="high" src="http://stream.maisouvida.com/player.swf" type="application/x-shockwave-flash">
         </div>
         <!-- Le javascript
         ================================================== -->
