@@ -1,19 +1,10 @@
 <?php
-include('includes/mobile_device_detect.php');
-mobile_device_detect(true, true, true, true, true, true, 'http://radiohorizon.com.br/mobile/', false);
-
-//error_reporting(0);
-
 session_start();
-
-if (!$_SESSION['tocando']) {
-    $_SESSION['tocando'] = "sim";
-}
-if ($_GET['play'] == '1') {
-    $_SESSION['tocando'] = 'sim';
-} elseif ($_GET['play'] == '0') {
-    $_SESSION['tocando'] = 'nao';
-}
+include('includes/mobile_device_detect.php');
+include('includes/mysql.class.php');
+include('includes/radio_config.php');
+include('includes/mysql_querys.php');
+mobile_device_detect(true, true, true, true, true, true, 'http://radiohorizon.com.br/mobile/', false);
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -57,16 +48,15 @@ if ($_GET['play'] == '1') {
                         <ul class="nav" id="menu2">
                             <li><a></a></li>
                             <li><a></a></li>
-                            <li><a href="http://www.radiohorizon.com.br">\\ Início //</a></li>
-                            <li><a href="#">\\ Programação //</a></li>
-                            <li><a href="#">\\ Notícias //</a></li>
-                            <li><a href="#">\\ Chat //</a></li>
-                            <li><a href="#">\\ Locutores //</a></li>
-                            <li><a href="#">\\ Publicidade //</a></li>
-                            <li><a href="#">\\ Contato //</a></li>
-                            <li><a href="#">\\ A Rádio //</a></li>
+                            <li><a href="?pageid=1">\\ Início //</a></li>
+                            <li><a href="?pageid=2">\\ Programação //</a></li>
+                            <li><a href="?pageid=3">\\ Notícias //</a></li>
+                            <li><a href="?pageid=4">\\ Chat //</a></li>
+                            <li><a href="?pageid=5">\\ Locutores //</a></li>
+                            <li><a href="?pageid=6">\\ Publicidade //</a></li>
+                            <li><a href="?pageid=7">\\ Contato //</a></li>
+                            <li><a href="?pageid=8">\\ A Rádio //</a></li>
                         </ul>
-
                     </div>
                 </div>
             </div>
@@ -76,12 +66,6 @@ if ($_GET['play'] == '1') {
                         <ul>
                             <li><a href="#"><img src="img/1.jpg" class="random" style="width: 1070px;" /></a><div class="label_text"><p>Rádio Horizon</p></div></li>
                             <li><a href="#"><img src="img/2.jpg" class="random" style="width: 1070px;" /></a><div class="label_text"><p>Rádio Horizon</p></div></li>
-                            <li><a href="#"><img src="img/3.jpg" class="random" style="width: 1070px;" /></a><div class="label_text"><p>Rádio Horizon</p></div></li>
-                            <li><a href="#"><img src="img/2.jpg" class="random" style="width: 1070px;" /></a><div class="label_text"><p>Rádio Horizon</p></div></li>
-                            <li><a href="#"><img src="img/1.jpg" class="random" style="width: 1070px;" /></a><div class="label_text"><p>Rádio Horizon</p></div></li>
-                            <li><a href="#"><img src="img/2.jpg" class="random" style="width: 1070px;" /></a><div class="label_text"><p>Rádio Horizon</p></div></li>
-                            <li><a href="#"><img src="img/3.jpg" class="random" style="width: 1070px;" /></a><div class="label_text"><p>Rádio Horizon</p></div></li>
-                            <li><a href="#"><img src="img/2.jpg" class="random" style="width: 1070px;" /></a><div class="label_text"><p>Rádio Horizon</p></div></li>
                         </ul>
                     </div>
                 </div>
@@ -89,39 +73,18 @@ if ($_GET['play'] == '1') {
             <div class="span11">
                 <div class="row">
                     <div class="span8">
-                        <div id="homeBoxs">
-                            <div class="title"><i class="icon-boxTitulo visible-desktop"></i><h4>\\ NOTICIAS //</h4></div>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Primeiro name</th>
-                                        <th>Último nome</th>
-                                        <th>Nome do usuário</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Miller</td>
-                                        <td>Magalhães</td>
-                                        <td>@Millerpx</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Ronaldo</td>
-                                        <td>Cunha</td>
-                                        <td>@Ronaldocf</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Eduardo</td>
-                                        <td>Gagno</td>
-                                        <td>@Eduardobg</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <?php
+                        if (!isset($_GET['pageid'])) {
+                            require_once "includes/pages/home.php";
+                        } else {
+                            if ($pagina_info) {
+                                //print_r($pagina_info);
+                                require_once "includes/pages/" .$pagina_info[0]['arquive'];
+                            } else {
+                                require_once 'includes/pages/home.php';
+                            }
+                        }
+                        ?>
                         <div id="homeBoxs">
                             <div class="title"><h4>\\ TOP 10 //</h4><i class="icon-boxTitulo visible-desktop"></i></div>
                             <br/>
@@ -150,14 +113,6 @@ if ($_GET['play'] == '1') {
                                 Tocando Agora:
                                 <iframe style="margin-bottom: -5px;" name="playerMusicaAtual" src="includes/mm.php" width="150" height="20" frameborder="0" scrolling="no"></iframe>
                                 <br>
-
-                                <!--                            
-                                    <div class="btn-group" style="margin-top: 3px;">
-                                        <a class="btn btn-primary" href="?play=1"><i class="icon-play  icon-white "></i></a>
-                                        <a class="btn btn-danger" href="?play=0"><i class="icon-stop"></i></a>
-                                    </div>
-                                -->
-
                                 <center>
                                     <embed height="17" width="260" flashvars="file=http://74.222.1.212:8780/;type=mp3&amp;volume=100&amp;bufferlength=10&amp;autostart=true" allowscriptaccess="always" quality="high" src="http://stream.maisouvida.com/player.swf" type="application/x-shockwave-flash">
                                 </center>
