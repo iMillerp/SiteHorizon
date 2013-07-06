@@ -157,7 +157,7 @@ if ($_GET['play'] == '1') {
                                         <a class="btn btn-danger" href="?play=0"><i class="icon-stop"></i></a>
                                     </div>
                                 -->
-                                
+
                                 <center>
                                     <embed height="17" width="260" flashvars="file=http://74.222.1.212:8780/;type=mp3&amp;volume=100&amp;bufferlength=10&amp;autostart=true" allowscriptaccess="always" quality="high" src="http://stream.maisouvida.com/player.swf" type="application/x-shockwave-flash">
                                 </center>
@@ -165,11 +165,15 @@ if ($_GET['play'] == '1') {
                         </div>
                         <div id="boxsLateral">
                             <div class="text"><h4>\\ PEÇA SUA MÚSICA! //</h4><i class="icon-boxTitulo2 visible-desktop"></i></div>
-                            <form>
-
+                            <form method="post" action="" id="pedidoMusica" style="margin-top: 5px; padding-bottom: 5px;">
+                                <center>
+                                    <input type="text" id="nome" name="nome" placeholder="Nome"/>
+                                    <input type="text" id="cidade" name="cidade" placeholder="Cidade"/>
+                                    <input type="text" id="Estado" name="estado" placeholder="Estado"/>
+                                    <textarea id="pedido" placeholder="Escreva aqui o seu pedido">Pedido Aqui :)</textarea>
+                                    <input type="submit" value="Enviar!" class="btn btn-primary" />
+                                </center>
                             </form>
-                            <br/>
-                            <br/>
                         </div>
                         <div id="boxsLateral">
                             <div class="text"><h4>\\ TWITTER //</h4><i class="icon-boxTitulo2 visible-desktop"></i></div>
@@ -191,17 +195,17 @@ if ($_GET['play'] == '1') {
         <div class="footer" id="footer">
 
             <div class="container">
-                <center class="muted credit">
-
-                    <a href="#" class="social44 facebook medialinks">&nbsp;</a>
-                    <a href="#" class="social44 twitter medialinks">&nbsp;</a>
-                    <a href="#" class="social44 google medialinks">&nbsp;</a>
-                    <a href="#" class="social44 youtube medialinks">&nbsp;</a>
-                    <a href="#" class="social44 instagram medialinks">&nbsp;</a>
-                    <a href="#" class="social44 vimeo medialinks">&nbsp;</a>                   
-
+                <center>
+                    <span class="muted credit">Rádio Horizon &COPY; 2013 - Todos os Direitos Reservados - Desenvolvido por <a href="http://millerdev.com.br" target="_blank">iMillerp</a></span>
                     <br/>
-                    Rádio Horizon &COPY; 2013 - Todos os Direitos Reservados - Desenvolvido por <a href="http://millerdev.com.br" target="_blank">iMillerp</a>
+                    <div style="margin-top: 25px;">
+                        <a href="#" class="social44 facebook medialinks">&nbsp;</a>
+                        <a href="#" class="social44 twitter medialinks">&nbsp;</a>
+                        <a href="#" class="social44 google medialinks">&nbsp;</a>
+                        <a href="#" class="social44 youtube medialinks">&nbsp;</a>
+                        <a href="#" class="social44 instagram medialinks">&nbsp;</a>
+                        <a hrf="#" class="social44 vimeo medialinks">&nbsp;</a>
+                    </div>
                 </center>
             </div>
         </div>
@@ -210,14 +214,8 @@ if ($_GET['play'] == '1') {
         <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="js/history.js"></script>
-        <script type="text/javascript" src="js/history.adapter.jquery.js"></script>
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-        <script type="text/javascript" src="js/jquery.animate-colors-min.js"></script>
         <script type="text/javascript" src="js/jquery.skitter.min.js"></script>
-        <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
-        <script type="text/javascript" src="js/jquery.scrollTo-min.js"></script>
-        <script type="text/javascript" src="js/page.js"></script>
         <script type="text/javascript" src="js/default.js"></script>
     </body>
 </html>

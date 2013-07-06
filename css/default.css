@@ -103,7 +103,7 @@ h1{
 /* Set the fixed height of the footer here */
 #push,
 #footer {
-    height: 80px;
+    height: 70px;
 }
 #footer {
     background-color: #dbdbdb;
